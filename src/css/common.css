@@ -16,3 +16,21 @@ img {
   display: block;
   max-width: 100%;
 }
+/* task 2 */
+.timer {
+  display: flex;
+  justify-content: center
+}
+.field:not(:last-child) {
+  margin-right: 20px;
+}
+.field {
+  text-align: center;
+}
+.label {
+  display: block;
+  color: teal;
+}
+button {
+  background-color: teal;
+}
