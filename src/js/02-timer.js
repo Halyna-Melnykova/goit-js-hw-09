@@ -3,6 +3,8 @@ import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
 
+import Notiflix from 'notiflix';
+
 const startBtnEl = document.querySelector('button[data-start]');
 // кнопка спочатку неактивна
 startBtnEl.disabled = true;
@@ -21,7 +23,7 @@ const options = {
     console.log(selectedDates[0]);
     
     if (selectedDates[0].getTime() <= now) {
-      alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
     } else {
         startBtnEl.disabled = false;
         selectDate = selectedDates[0];
@@ -33,7 +35,6 @@ const options = {
 flatpickr(selector, options);
 
 // Таймер
-// const TIMER_DEADLINE = selectDate;
 const timerEl = document.querySelector('.timer');
 
 const timer = {
